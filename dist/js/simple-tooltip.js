@@ -24,7 +24,7 @@ $(document).ready(function() {
                 // Hover over code
                 var title = $(this).attr('title');
                 $(this).data('tipText', title).removeAttr('title');
-                $('<p class="tooltip"></p>')
+                $('<p class="tooltip" style="position: absolute;"></p>')
                 .text(title)
                 .appendTo('body')
                 .fadeIn('slow');
