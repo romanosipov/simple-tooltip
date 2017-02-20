@@ -34,7 +34,7 @@ $(document).ready(function() {
                 $('.tooltip').remove();
         }).mousemove(function(e) {
                 var mousex = e.pageX + 20; //Get X coordinates
-                var mousey = e.pageY - 30; //Get Y coordinates
+                var mousey = e.pageY - 150; //Get Y coordinates
                 $('.tooltip')
                 .css({ top: mousey, left: mousex })
         });
