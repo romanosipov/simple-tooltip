@@ -50,8 +50,10 @@ $(document).ready(function() {
   }).mousemove(function(e) {
     var tooltip = $('.tooltip');
 
-    var x = e.target.offsetLeft - tooltip.width() / 2;
-    var y = e.target.offsetTop - e.target.offsetHeight - tooltip.height() - 30;
+    var position = $(e.target).position();
+
+    var x = position.left - tooltip.width() / 2;
+    var y = position.top - e.target.offsetHeight - tooltip.height() - 30;
 
     tooltip.css({left: x, top: y});
   });
