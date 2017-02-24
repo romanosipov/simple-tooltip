@@ -40,6 +40,9 @@ $(document).ready(function() {
   });
 
   $('.masterTooltipUp').hover(function(){
+    if ($(this).attr("tooltip")) {
+      $(this).attr("title", $(this).attr("tooltip"));
+    }
     var title = $(this).attr('title');
     $(this).data('tipText', title).removeAttr('title');
     $('<p class="tooltip" style="position: absolute;"></p>')
