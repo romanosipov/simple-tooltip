@@ -31,8 +31,10 @@ $(document).ready(function() {
   }).mousemove(function(e) {
     var tooltip = $('.tooltip');
 
-    var x = e.target.offsetLeft + e.target.offsetWidth + 20;
-    var y = e.target.offsetTop - tooltip.height() / 2 - e.target.offsetHeight;
+    var target = $(e.target);
+
+    var x = target.offset().left + target.width() + 20;
+    var y = target.offset().top + (target.height() / 2) - (tooltip.height() / 2) - 10;
 
     tooltip.css({left: x, top: y});
   });
@@ -52,10 +54,8 @@ $(document).ready(function() {
 
     var target = $(e.target);
 
-    var position = target.position();
-
-    var x = position.left - tooltip.width() / 2;
-    var y = position.top - target.height() - tooltip.height() - 30;
+    var x = target.offset().left + (target.width() / 2) - ((tooltip.width()+ 20) / 2);
+    var y = target.offset().top - target.height() - tooltip.height() - 10;
 
     tooltip.css({left: x, top: y});
   });
