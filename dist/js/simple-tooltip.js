@@ -62,4 +62,52 @@ $(document).ready(function() {
 
     tooltip.css({left: x, top: y});
   });
+
+  $('.masterTooltipUpRight').hover(function(){
+    if ($(this).attr("tooltip")) {
+      $(this).attr("title", $(this).attr("tooltip"));
+    }
+    var title = $(this).attr('title');
+    $(this).data('tipText', title).removeAttr('title');
+    $('<p class="tooltip" style="position: absolute;"></p>')
+    .text(title)
+    .appendTo('body')
+    .fadeIn('slow');
+  }, function() {
+    $(this).attr('title', $(this).data('tipText'));
+    $('.tooltip').remove();
+  }).mousemove(function(e) {
+    var tooltip = $('.tooltip');
+
+    var target = $(e.target);
+
+    var x = target.offset().left + target.width() + 20;
+    var y = target.offset().top - target.height() - tooltip.height() - 10;
+
+    tooltip.css({left: x, top: y});
+  });
+
+  $('.masterTooltipBottomRight').hover(function(){
+    if ($(this).attr("tooltip")) {
+      $(this).attr("title", $(this).attr("tooltip"));
+    }
+    var title = $(this).attr('title');
+    $(this).data('tipText', title).removeAttr('title');
+    $('<p class="tooltip" style="position: absolute;"></p>')
+    .text(title)
+    .appendTo('body')
+    .fadeIn('slow');
+  }, function() {
+    $(this).attr('title', $(this).data('tipText'));
+    $('.tooltip').remove();
+  }).mousemove(function(e) {
+    var tooltip = $('.tooltip');
+
+    var target = $(e.target);
+
+    var x = target.offset().left + target.width() + 20;
+    var y = target.offset().top + tooltip.height();
+
+    tooltip.css({left: x, top: y});
+  });
 });
