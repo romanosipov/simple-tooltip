@@ -81,8 +81,8 @@ $(document).ready(function() {
 
     var target = $(e.target);
 
-    var x = target.offset().left + target.width() + 20;
-    var y = target.offset().top - target.height() - tooltip.height() - 10;
+    var x = target.offset().left + target.width() + 10;
+    var y = target.offset().top - target.height();
 
     tooltip.css({left: x, top: y});
   });
@@ -105,8 +105,8 @@ $(document).ready(function() {
 
     var target = $(e.target);
 
-    var x = target.offset().left + target.width() + 20;
-    var y = target.offset().top + tooltip.height();
+    var x = target.offset().left + target.width() + 10;
+    var y = target.offset().top + target.height() + 10;
 
     tooltip.css({left: x, top: y});
   });
